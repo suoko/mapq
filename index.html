@@ -1,7 +1,6 @@
 <html>
   <head>
     <script src="http://open.mapquestapi.com/sdk/js/v7.0.s/mqa.toolkit.js?key=Fmjtd%7Cluur20uy2g%2C2g%3Do5-9aya1w"></script>
-    <script src="http://suoko.github.io/mapq/my.js"></script>
 
     <script type="text/javascript">
 
@@ -11,14 +10,11 @@
 
       MQA.EventUtil.observe(window, 'load', function() {
 
-
-  
-  
         /*Create an object for options*/
         var options={
           elt:document.getElementById('map'),        /*ID of element on the page where you want the map added*/
           zoom:13,                                   /*initial zoom level of map*/
-          latLng:{lat:43.0059, lng:12.6000},    /*center of map in latitude/longitude*/
+          latLng:{lat:40.735383, lng:-73.984655},    /*center of map in latitude/longitude*/
           mtype:'osm'                                /*map type (osm)*/
         };
 
@@ -27,8 +23,9 @@
 
         MQA.withModule('directions', function() {
           map.addRoute([
-            {latLng: {lat:43.0059, lng:12.6000},
-            {latLng: {lat:43.0059, lng:11.4951}}],
+            {latLng: {lat:40.735383, lng:-73.984655}},
+            {latLng: {lat:40.765416, lng:-73.985386}}],
+
             /*Add options.*/
             {ribbonOptions:{draggable:true}},
 
