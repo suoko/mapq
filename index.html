@@ -14,7 +14,7 @@
         var options={
           elt:document.getElementById('map'),        /*ID of element on the page where you want the map added*/
           zoom:13,                                   /*initial zoom level of map*/
-          latLng:{lat:40.735383, lng:-73.984655},    /*center of map in latitude/longitude*/
+          latLng:{lat:43.0059, lng:12.6000},    /*center of map in latitude/longitude*/
           mtype:'osm'                                /*map type (osm)*/
         };
 
@@ -23,8 +23,8 @@
 
         MQA.withModule('directions', function() {
           map.addRoute([
-            {latLng: {lat:40.735383, lng:-73.984655}},
-            {latLng: {lat:40.765416, lng:-73.985386}}],
+            {latLng: {lat:43.0059, lng:12.6000}},
+            {latLng: {lat:43.0059, lng:12.1000}}],
 
             /*Add options.*/
             {ribbonOptions:{draggable:true}},
