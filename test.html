@@ -1,0 +1,57 @@
+<li data-role="collapsible" data-iconpos="right" data-shadow="false" data-corners="false">
+            <h2 data-l10n-id="map">Map</h2>
+            <form>
+              <label data-l10n-id="zoom-level" for="select-zoom">Zoom</label>
+              <select name="select-zoom" id="select-zoom" data-mini="true">
+              </select>
+              <label data-l10n-id="maptype" for="select-maptype">MAPTYPE</label>
+              <select name="select-maptype" id="select-maptype" data-mini="true">
+              </select>
+              
+            </form>
+          </li>
+
+Hayate.Config = function() {
+    var configDefault = {
+        "appname": "Hayate",
+        "geolocation": {
+            "min" : {
+                "accuracy": 50,
+                "altAccuracy": 50,
+                "timeInterval": 5,
+                "distanceInterval": 10
+            },
+            "autoLap": {
+                "on": "off",
+                "distance": 1000
+            },
+            "pace": {
+                "type": "average-pace"  
+            },
+            "distanceUnit": "metre"
+        },
+        "map": {
+            "type": "GoogleMap",
+            "url": {
+                "GoogleMap": "http://kazhik.github.io/Hayate/map/gmap.html",
+                "OpenStreetMap": "http://kazhik.github.io/Hayate/map/omap.html"
+            },
+            "zoom": 16
+        },
+        "debug": {
+            "log": "on",
+            "export": "position"
+        }
+    };
+
+
+Hayate.MapView = function() {
+
+    function loadData(posArray) {
+        var positionlist = {
+            type: "positionlist",
+            list: posArray
+        }
+        var mapIframe = document.getElementById("map-iframe");
+        mapIframe.contentWindow.postMessage(JSON.stringify(positionlist), '*');            
+    }
