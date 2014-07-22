@@ -18,26 +18,14 @@
           mtype:'osm'                                /*map type (osm)*/
         };
         
-        
-        function success(Lati) {
-  	  console.log(pos.coords.latitude);
-        };
-        
-	function success(Longi) {
-  	  console.log(pos.coords.latitude);
-	};
-
-
-
-
-
+ 
 
         /*Construct an instance of MQA.TileMap with the options object*/
         window.map = new MQA.TileMap(options);
 
         MQA.withModule('directions', function() {
           map.addRoute([
-            {latLng: {lat:navigator.geolocation.getCurrentPosition(Lati), lng:navigator.geolocation.getCurrentPosition(Longi);}},
+            {latLng: {lat:navigator.geolocation.getCurrentPosition(function(position) {position.coords.latitude}), geolocation.getCurrentPosition(function(position) {position.coords.longitude})}},
             {latLng: {lat:43.0059, lng:12.1000}}],
 
             /*Add options.*/
