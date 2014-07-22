@@ -19,8 +19,8 @@
         };
         
  
-var lati = navigator.geolocation.getCurrentPosition(function(position) {console.log(position.coords.latitude)});
-var longi = navigator.geolocation.getCurrentPosition(function(position) {console.log(position.coords.longitude)});
+var lati = navigator.geolocation.getCurrentPosition(function(position) {return(position.coords.latitude)});
+var longi = navigator.geolocation.getCurrentPosition(function(position) {return(position.coords.longitude)});
 
         /*Construct an instance of MQA.TileMap with the options object*/
         window.map = new MQA.TileMap(options);
